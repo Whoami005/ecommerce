@@ -31,12 +31,7 @@ class Search extends StatelessWidget {
           ),
         ),
         ElevatedButton(
-          onPressed: (){
-            showModalBottomSheet(context: context, builder: (BuildContext context){
-              return Container();
-            }
-            );
-          },
+          onPressed: (){},
           style: ElevatedButton.styleFrom(
             primary: MyAppColors.ellipse2,
             shape: const CircleBorder(),

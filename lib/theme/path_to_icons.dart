@@ -12,4 +12,5 @@ class MyAppIcons {
   static const String phone = 'assets/icons/phone.svg';
   static const String search = 'assets/icons/search.svg';
   static const String qrcode = 'assets/icons/qrcode.svg';
+  static const String exit = 'assets/icons/exit.svg';
 }

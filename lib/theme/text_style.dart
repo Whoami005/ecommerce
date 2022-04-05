@@ -36,6 +36,13 @@ class MyAppTextStyle {
         color: color
     );
   }
+  static TextStyle title24(Color color) {
+    return TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.w500,
+        color: color
+    );
+  }
   static TextStyle title22(Color color) {
     return TextStyle(
         fontSize: 10,
@@ -50,6 +57,7 @@ class MyAppTextStyle {
       color: Colors.grey,
       decoration: TextDecoration.lineThrough
     );
+
 
   static TextStyle title31 (Color color) {
     return TextStyle(
