@@ -1,3 +1,4 @@
+import 'package:ecommerce/bloc/bloc_observer.dart';
 import 'package:ecommerce/repositories/home_repository.dart';
 import 'package:ecommerce/screens/home_store/bloc/home_bloc.dart';
 import 'package:ecommerce/screens/home_store/home_store.dart';
@@ -7,27 +8,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp( MyApp());
+  BlocOverrides.runZoned(
+    () => runApp(MyApp()),
+    blocObserver: BlocsObserver(),
+  );
 }
 
 class MyApp extends StatelessWidget {
   final homeRepository = HomeRepository();
 
   MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider<HomeBloc>(
-      create: (BuildContext context) =>  HomeBloc(homeRepository: homeRepository),
+      create: (BuildContext context) =>
+          HomeBloc(homeRepository: homeRepository),
       child: MaterialApp(
         theme: myLightTheme,
         initialRoute: '/menu',
-
         routes: {
           '/': (context) => const HomeStore(),
           '/menu': (context) => const BottomNavigationMenu(),
         },
-        ),
+      ),
     );
   }
 }
-

@@ -3,5 +3,5 @@ import 'package:ecommerce/repositories/api_home_store.dart';
 
 class HomeRepository {
   final HomeProvider _homeProvider = HomeProvider();
-  Future<HomeModel> getAllUsers() => _homeProvider.getHome();
+  Future<HomeModel> getAllPhones() => _homeProvider.getHome();
 }

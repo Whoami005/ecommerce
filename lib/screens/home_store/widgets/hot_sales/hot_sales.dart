@@ -11,17 +11,24 @@ class HotSales extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeBloc, HomeState>(builder: (context, state) {
+    return BlocBuilder<HomeBloc, HomeState>(
+        builder: (context, state) {
       final HomeBloc Bloc = BlocProvider.of<HomeBloc>(context);
       if (state is HomeInitialState) {
-        return Center(
+        return
+        //   const Center(
+        //     child: CircularProgressIndicator()
+        // );
+
+
+          Center(
           child: Column(children: [
-            Icon(Icons.group),
+            const Icon(Icons.group),
             IconButton(
               onPressed: () {
-                Bloc.add(HomeLoadEvent());
+                Bloc.add(const HomeLoadEvent());
               },
-              icon: Icon(Icons.abc),
+              icon: const Icon(Icons.abc),
             )
           ]),
         );

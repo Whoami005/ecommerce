@@ -1,11 +1,18 @@
 part of 'home_bloc.dart';
 
 @immutable
-abstract class HomeState {
+abstract class HomeState extends Equatable{
   const HomeState();
+
+  @override
+  List<Object?> get props => [];
 }
 
-class HomeInitialState extends HomeState {}
+class HomeInitialState extends HomeState {
+
+  @override
+  List<Object?> get props => [];
+}
 
 
 
@@ -16,22 +23,18 @@ class HomeLoadedState extends HomeState{
     required this.homeInfo,
   });
 
+  @override
+
+  List<Object?> get props => [homeInfo];
+
 }
 
-// class HomeLoadedState extends HomeStoreState {
-//   final HomeAndBestModel? _homeAndBestLoaded;
-//
-//   const HomeLoadedState({
-//     HomeAndBestModel? homeAndBestLoaded,
-//   }) : _homeAndBestLoaded = homeAndBestLoaded;
-//
-//   HomeAndBestModel get homeAndBestLoaded => _homeAndBestLoaded!;
-//
-//   HomeLoadedState copyWith({
-//     HomeAndBestModel? homeAndBestLoaded,
-//   }) {
-//     return HomeLoadedState(
-//       homeAndBestLoaded: homeAndBestLoaded ?? _homeAndBestLoaded,
-//     );
-//   }
-// }
+class HomeErrorState extends HomeState {
+  final String errorMessage;
+
+  const HomeErrorState({required this.errorMessage});
+
+  @override
+  List<Object?> get props => [errorMessage];
+
+}
