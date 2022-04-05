@@ -11,18 +11,10 @@ class BestSeller extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(builder: (context, state) {
-      final HomeBloc bloc = BlocProvider.of<HomeBloc>(context);
       if (state is HomeInitialState) {
-        return Center(
-          child: IconButton(
-            onPressed: () {
-              bloc.add(const HomeLoadEvent());
-            },
-            icon: const Icon(Icons.add),
-          ),
+        return const Center(
+          child: CircularProgressIndicator(),
         );
-
-        // Center(child: CircularProgressIndicator(),);
       }
       if (state is HomeLoadedState) {
         return GridView.builder(

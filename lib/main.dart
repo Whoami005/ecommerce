@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<HomeBloc>(
       create: (BuildContext context) =>
-          HomeBloc(homeRepository: homeRepository),
+          HomeBloc(homeRepository: homeRepository)..add(const HomeLoadEvent()),
       child: MaterialApp(
         theme: myLightTheme,
         initialRoute: '/menu',

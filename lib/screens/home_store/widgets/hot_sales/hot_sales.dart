@@ -11,27 +11,9 @@ class HotSales extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeBloc, HomeState>(
-        builder: (context, state) {
-      final HomeBloc bloc = BlocProvider.of<HomeBloc>(context);
+    return BlocBuilder<HomeBloc, HomeState>(builder: (context, state) {
       if (state is HomeInitialState) {
-        return
-        //   const Center(
-        //     child: CircularProgressIndicator()
-        // );
-
-
-          Center(
-          child: Column(children: [
-            const Icon(Icons.group),
-            IconButton(
-              onPressed: () {
-                bloc.add(const HomeLoadEvent());
-              },
-              icon: const Icon(Icons.abc),
-            )
-          ]),
-        );
+        return const Center(child: CircularProgressIndicator());
       }
       if (state is HomeLoadedState) {
         return CarouselSlider.builder(
@@ -99,8 +81,7 @@ class HomeStore extends StatelessWidget {
                 style: MyAppTextStyle.title32(Colors.white),
               ),
               decoration: const BoxDecoration(
-                color: MyAppColors.ellipse2, shape: BoxShape.circle
-              ),
+                  color: MyAppColors.ellipse2, shape: BoxShape.circle),
             ),
           ),
         Padding(
