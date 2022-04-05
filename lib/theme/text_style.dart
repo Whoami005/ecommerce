@@ -36,6 +36,21 @@ class MyAppTextStyle {
         color: color
     );
   }
+  static TextStyle title22(Color color) {
+    return TextStyle(
+        fontSize: 10,
+        fontWeight: FontWeight.w500,
+        color: color
+    );
+  }
+  static TextStyle title23 =
+  const TextStyle(
+      fontSize: 10,
+      fontWeight: FontWeight.w500,
+      color: Colors.grey,
+      decoration: TextDecoration.lineThrough
+    );
+
   static TextStyle title31 (Color color) {
     return TextStyle(
         fontSize: 25,
@@ -47,6 +62,13 @@ class MyAppTextStyle {
     return TextStyle(
       fontWeight: FontWeight.w400,
       fontSize: 12,
+      color: color,
+    );
+  }
+  static TextStyle title12(Color color) {
+    return TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 10,
       color: color,
     );
   }

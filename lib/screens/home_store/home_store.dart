@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/home_store/widgets/best_seller/best_seller.dart';
 import 'package:ecommerce/screens/home_store/widgets/geolocation/geolocation.dart';
 import 'package:ecommerce/screens/home_store/widgets/hot_sales/hot_sales.dart';
 import 'package:ecommerce/screens/home_store/widgets/search/search.dart';
@@ -25,6 +26,7 @@ class HomeStore extends StatelessWidget {
                 Title(nameTitle: 'Hot sales', nameButton: 'see more'),
                 HotSales(),
                 Title(nameTitle: 'Best seller', nameButton: 'see more'),
+                BestSeller(),
               ],
             ),
           ),

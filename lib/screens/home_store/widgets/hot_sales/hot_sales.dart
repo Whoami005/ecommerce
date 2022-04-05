@@ -13,7 +13,7 @@ class HotSales extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
-      final HomeBloc Bloc = BlocProvider.of<HomeBloc>(context);
+      final HomeBloc bloc = BlocProvider.of<HomeBloc>(context);
       if (state is HomeInitialState) {
         return
         //   const Center(
@@ -26,7 +26,7 @@ class HotSales extends StatelessWidget {
             const Icon(Icons.group),
             IconButton(
               onPressed: () {
-                Bloc.add(const HomeLoadEvent());
+                bloc.add(const HomeLoadEvent());
               },
               icon: const Icon(Icons.abc),
             )
@@ -80,7 +80,7 @@ class HomeStore extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           child: CachedNetworkImage(
             imageUrl: imageUrl,
-            width: 378,
+            width: double.infinity,
             height: 182,
             fit: BoxFit.cover,
             alignment: Alignment.topLeft,
