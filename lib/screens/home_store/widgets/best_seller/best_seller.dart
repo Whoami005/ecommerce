@@ -1,46 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:ecommerce/screens/home_store/bloc/home_bloc.dart';
 import 'package:ecommerce/theme/colors.dart';
 import 'package:ecommerce/theme/text_style.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-class BestSeller extends StatelessWidget {
-  const BestSeller({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<HomeBloc, HomeState>(builder: (context, state) {
-      if (state is HomeInitialState) {
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
-      }
-      if (state is HomeLoadedState) {
-        return GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 0.8 / 1,
-          ),
-          itemCount: state.homeInfo.bestSeller.length,
-          physics: const NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          itemBuilder: (BuildContext context, int index) {
-            return BestSellerInfo(
-              imageUrl: state.homeInfo.bestSeller[index].picture,
-              discountPrice: state.homeInfo.bestSeller[index].discountPrice,
-              title: state.homeInfo.bestSeller[index].title,
-              priceWithoutDiscount:
-                  state.homeInfo.bestSeller[index].priceWithoutDiscount,
-              isFavorites: state.homeInfo.bestSeller[index].isFavorites,
-            );
-          },
-        );
-      }
-      return const Icon(Icons.http);
-    });
-  }
-}
 
 class BestSellerInfo extends StatelessWidget {
   final String imageUrl;

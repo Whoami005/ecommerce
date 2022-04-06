@@ -1,52 +1,16 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:ecommerce/screens/home_store/bloc/home_bloc.dart';
 import 'package:ecommerce/theme/colors.dart';
 import 'package:ecommerce/theme/text_style.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HotSales extends StatelessWidget {
-  const HotSales({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<HomeBloc, HomeState>(builder: (context, state) {
-      if (state is HomeInitialState) {
-        return const Center(child: CircularProgressIndicator());
-      }
-      if (state is HomeLoadedState) {
-        return CarouselSlider.builder(
-          itemBuilder: (BuildContext context, int index, int realIndex) {
-            return HomeStore(
-              imageUrl: state.homeInfo.homeStore[index].picture,
-              isBuy: state.homeInfo.homeStore[index].isBuy,
-              title: state.homeInfo.homeStore[index].title,
-              isNew: state.homeInfo.homeStore[index].isNew,
-              subtitle: state.homeInfo.homeStore[index].subtitle,
-            );
-          },
-          options: CarouselOptions(
-            height: 182,
-            viewportFraction: 1,
-            autoPlay: true,
-          ),
-          itemCount: state.homeInfo.homeStore.length,
-        );
-      }
-      return const Center(child: Icon(Icons.http));
-    });
-  }
-}
-
-class HomeStore extends StatelessWidget {
+class HomeSales extends StatelessWidget {
   final String title;
   final String subtitle;
   final String imageUrl;
   final bool? isNew;
   final bool isBuy;
 
-  const HomeStore(
+  const HomeSales(
       {Key? key,
       required this.imageUrl,
       required this.title,

@@ -7,30 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ProductShop extends StatelessWidget {
-  const ProductShop({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<ProductDetailsBloc, ProductDetailsState>(
-        builder: (context, state) {
-      if (state is ProductLoadedState) {
-        return ProductShopBarInfo(
-          title: state.productInfo.title,
-          isFavorites: state.productInfo.isFavorites,
-          rating: state.productInfo.rating,
-          cpu: state.productInfo.cpu,
-          sd: state.productInfo.sd,
-          ssd: state.productInfo.ssd,
-          camera: state.productInfo.camera,
-        );
-      }
-      return const Center(
-        child: CircularProgressIndicator(),
-      );
-    });
-  }
-}
 
 class ProductShopBarInfo extends StatelessWidget {
   final String title;
@@ -93,6 +69,7 @@ class ProductShopBarInfo extends StatelessWidget {
           RatingBar.builder(
               initialRating: rating,
               itemSize: 24,
+              allowHalfRating: true,
               itemBuilder: (context, index) => const Icon(
                     Icons.star,
                     color: Colors.amber,
@@ -226,6 +203,7 @@ class _SelectColorCapacityState extends State<SelectColorCapacity> {
                 SizedBox(
                   width: 40,
                   child: FloatingActionButton(
+                    heroTag: 'one',
                       backgroundColor: colorFromApi(state.productInfo.color[0]),
                       onPressed: () {
                         setState(() {
@@ -242,6 +220,7 @@ class _SelectColorCapacityState extends State<SelectColorCapacity> {
                 SizedBox(
                   width: 40,
                   child: FloatingActionButton(
+                      heroTag: 'two',
                       backgroundColor: colorFromApi(state.productInfo.color[1]),
                       onPressed: () {
                         setState(() {
