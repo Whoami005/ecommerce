@@ -1,4 +1,5 @@
 import 'package:ecommerce/bloc/bloc_observer.dart';
+import 'package:ecommerce/generated/l10n.dart';
 import 'package:ecommerce/screens/home_store/bloc/home_bloc.dart';
 import 'package:ecommerce/screens/home_store/home_store.dart';
 import 'package:ecommerce/screens/home_store/repositories/home_repository.dart';
@@ -9,6 +10,7 @@ import 'package:ecommerce/screens/widgets/bottom_navigation_bar/bottom_navigatio
 import 'package:ecommerce/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   BlocOverrides.runZoned(
@@ -39,11 +41,18 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: myLightTheme,
+        debugShowCheckedModeBanner: false,
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
         initialRoute: '/',
         routes: {
           '/': (context) => const BottomNavigationMenu(),
           '/home': (context) => const HomeStore(),
-          '/productDetails': (context) => const ProductDetails(),
+          '/home/productDetails': (context) => const ProductDetails(),
         },
       ),
     );

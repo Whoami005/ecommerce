@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ecommerce/generated/l10n.dart';
 import 'package:ecommerce/theme/colors.dart';
 import 'package:ecommerce/theme/text_style.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +43,7 @@ class HomeSales extends StatelessWidget {
               width: 27,
               alignment: Alignment.center,
               child: Text(
-                'New',
+                S.of(context).New,
                 style: MyAppTextStyle.title32(Colors.white),
               ),
               decoration: const BoxDecoration(
@@ -71,7 +72,7 @@ class HomeSales extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {},
                 child: Text(
-                  'Buy Now!',
+                  S.of(context).Buy,
                   style: MyAppTextStyle.title32(Colors.black),
                 ),
                 style: ElevatedButton.styleFrom(

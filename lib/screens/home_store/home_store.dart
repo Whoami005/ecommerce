@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecommerce/generated/l10n.dart';
 import 'package:ecommerce/screens/home_store/bloc/home_bloc.dart';
 import 'package:ecommerce/screens/home_store/widgets/best_seller/best_seller.dart';
 import 'package:ecommerce/screens/home_store/widgets/geolocation/geolocation.dart';
@@ -27,14 +28,17 @@ class HomeStore extends StatelessWidget {
                 child: Column(
                   children: [
                     const MyGeolocation(),
-                    const Title(
-                        nameTitle: 'Select Category', nameButton: 'view all'),
+                    Title(
+                        nameTitle: S.of(context).TitleSelectCategoryName,
+                        nameButton: S.of(context).TitleSelectCategoryButton),
                     const SelectCategory(),
                     const SizedBox(
                       height: 20,
                     ),
                     const Search(),
-                    const Title(nameTitle: 'Hot sales', nameButton: 'see more'),
+                    Title(
+                        nameTitle: S.of(context).TitleHotSalesName,
+                        nameButton: S.of(context).TitleButton),
                     CarouselSlider.builder(
                       itemBuilder:
                           (BuildContext context, int index, int realIndex) {
@@ -53,8 +57,9 @@ class HomeStore extends StatelessWidget {
                       ),
                       itemCount: state.homeInfo.homeStore.length,
                     ),
-                    const Title(
-                        nameTitle: 'Best seller', nameButton: 'see more'),
+                    Title(
+                        nameTitle: S.of(context).TitleBestSellerName,
+                        nameButton: S.of(context).TitleButton),
                     GridView.builder(
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(

@@ -1,3 +1,4 @@
+import 'package:ecommerce/generated/l10n.dart';
 import 'package:ecommerce/screens/home_store/home_store.dart';
 import 'package:ecommerce/theme/path_to_icons.dart';
 import 'package:ecommerce/theme/text_style.dart';
@@ -14,15 +15,14 @@ class BottomNavigationMenu extends StatefulWidget {
 class _BottomNavigationMenuState extends State<BottomNavigationMenu> {
   int _selectedTab = 0;
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    HomeStore(),
-    Center(child: Text('Favorite')),
-    Center(child: Text('Favorite')),
-    Center(child: Text('Settings')),
+  static final List<Widget> _widgetOptions = <Widget>[
+    const HomeStore(),
+    Center(child: Text(S().Basket)),
+    Center(child: Text(S().Favorite)),
+    Center(child: Text(S().Settings)),
   ];
 
-
-  void onSelectedTab(int index){
+  void onSelectedTab(int index) {
     if (_selectedTab == index) return;
     setState(() {
       _selectedTab = index;
@@ -50,19 +50,19 @@ class _BottomNavigationMenuState extends State<BottomNavigationMenu> {
                       const SizedBox(
                         width: 7,
                       ),
-                      Text('Explorer', style: MyAppTextStyle.title3(Colors.white),)
+                      Text(
+                        S.of(context).Explorer,
+                        style: MyAppTextStyle.title3(Colors.white),
+                      )
                     ],
                   ),
                   label: ''),
               BottomNavigationBarItem(
-                  icon: SvgPicture.asset(MyAppIcons.basket),
-                  label: ''),
+                  icon: SvgPicture.asset(MyAppIcons.basket), label: ''),
               BottomNavigationBarItem(
-                  icon: SvgPicture.asset(MyAppIcons.favorites),
-                  label: ''),
+                  icon: SvgPicture.asset(MyAppIcons.favorites), label: ''),
               BottomNavigationBarItem(
-                  icon: SvgPicture.asset(MyAppIcons.profile),
-                  label: ''),
+                  icon: SvgPicture.asset(MyAppIcons.profile), label: ''),
             ],
             currentIndex: _selectedTab,
             onTap: onSelectedTab,

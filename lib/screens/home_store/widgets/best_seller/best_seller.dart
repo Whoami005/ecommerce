@@ -86,7 +86,7 @@ class BestSellerInfo extends StatelessWidget {
             color: Colors.transparent,
             child: InkWell(
               onTap: () {
-                Navigator.pushNamed(context, '/productDetails');
+                Navigator.pushNamed(context, '/home/productDetails');
               },
               borderRadius: BorderRadius.circular(8.0),
             ),

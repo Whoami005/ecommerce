@@ -1,3 +1,4 @@
+import 'package:ecommerce/generated/l10n.dart';
 import 'package:ecommerce/theme/colors.dart';
 import 'package:ecommerce/theme/path_to_icons.dart';
 import 'package:ecommerce/theme/text_style.dart';
@@ -15,14 +16,14 @@ class _SelectCategoryState extends State<SelectCategory> {
   int _selectedTab = 0;
 
   final List<dynamic> _selectCategory = [
-    {'name': 'Phones', 'icon': MyAppIcons.phone},
-    {'name': 'Computer', 'icon': MyAppIcons.computer},
-    {'name': 'Health', 'icon': MyAppIcons.health},
-    {'name': 'Books', 'icon': MyAppIcons.books},
-    {'name': 'Phones', 'icon': MyAppIcons.phone},
-    {'name': 'Computer', 'icon': MyAppIcons.computer},
-    {'name': 'Health', 'icon': MyAppIcons.health},
-    {'name': 'Books', 'icon': MyAppIcons.books},
+    {'name': S().Phones, 'icon': MyAppIcons.phone},
+    {'name': S().Computer, 'icon': MyAppIcons.computer},
+    {'name': S().Health, 'icon': MyAppIcons.health},
+    {'name': S().Books, 'icon': MyAppIcons.books},
+    {'name': S().Phones, 'icon': MyAppIcons.phone},
+    {'name': S().Computer, 'icon': MyAppIcons.computer},
+    {'name': S().Health, 'icon': MyAppIcons.health},
+    {'name': S().Books, 'icon': MyAppIcons.books},
   ];
 
   @override
@@ -30,15 +31,15 @@ class _SelectCategoryState extends State<SelectCategory> {
     return SizedBox(
       height: 100,
       child: ListView.builder(
-        physics: const ScrollPhysics(
-            parent: BouncingScrollPhysics()
-        ),
+          physics: const ScrollPhysics(parent: BouncingScrollPhysics()),
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, int index) {
             return Column(
               children: [
                 Container(
-                  padding: const EdgeInsets.only(bottom: 10,),
+                  padding: const EdgeInsets.only(
+                    bottom: 10,
+                  ),
                   width: 85,
                   height: 80,
                   child: ElevatedButton(
@@ -58,7 +59,10 @@ class _SelectCategoryState extends State<SelectCategory> {
                         shape: const CircleBorder()),
                   ),
                 ),
-                Text(_selectCategory[index]['name'], style: MyAppTextStyle.title21(Colors.black),)
+                Text(
+                  _selectCategory[index]['name'],
+                  style: MyAppTextStyle.title21(Colors.black),
+                )
               ],
             );
           },

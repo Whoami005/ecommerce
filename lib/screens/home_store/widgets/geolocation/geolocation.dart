@@ -1,3 +1,4 @@
+import 'package:ecommerce/generated/l10n.dart';
 import 'package:ecommerce/screens/home_store/widgets/geolocation/widgets/filter_options.dart';
 import 'package:ecommerce/theme/path_to_icons.dart';
 import 'package:ecommerce/theme/text_style.dart';
@@ -20,7 +21,7 @@ class MyGeolocation extends StatelessWidget {
           width: 3,
         ),
         Text(
-          'Zihuatanejo, Gro',
+          S.of(context).Geolocation,
           style: MyAppTextStyle.title2(Colors.black),
         ),
         IconButton(
@@ -33,7 +34,8 @@ class MyGeolocation extends StatelessWidget {
         IconButton(
           onPressed: () {
             showModalBottomSheet(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)) ,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)),
                 context: context,
                 builder: (BuildContext context) {
                   return const FilterOptions();
