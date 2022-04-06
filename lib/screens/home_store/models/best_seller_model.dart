@@ -1,4 +1,6 @@
-import 'package:ecommerce/entities/best_seller_entity.dart';
+
+
+import 'package:ecommerce/screens/home_store/entities/best_seller_entity.dart';
 
 class BestSellerModel extends BestSellerEntity {
   const BestSellerModel(

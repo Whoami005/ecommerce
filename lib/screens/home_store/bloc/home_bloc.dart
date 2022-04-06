@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:ecommerce/models/home_model.dart';
-import 'package:ecommerce/repositories/home_repository.dart';
+import 'package:ecommerce/screens/home_store/models/home_model.dart';
+import 'package:ecommerce/screens/home_store/repositories/home_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 

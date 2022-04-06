@@ -21,10 +21,11 @@ class FilterOptions extends StatelessWidget {
                   Navigator.pop(context);
                 },
                 style: ElevatedButton.styleFrom(
-                    shape: ContinuousRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
                     primary: MyAppColors.ellipse3,
-                    minimumSize: const Size(1, 40)),
+                    padding: const EdgeInsets.all(10),
+                    minimumSize: const Size(15, 15)),
                 child: SvgPicture.asset(MyAppIcons.exit),
               ),
               const Spacer(),

@@ -1,4 +1,6 @@
-import 'package:ecommerce/entities/home_store_entity.dart';
+
+
+import 'package:ecommerce/screens/home_store/entities/home_store_entity.dart';
 
 class HomeStoreModel extends HomeStoreEntity {
   const HomeStoreModel({

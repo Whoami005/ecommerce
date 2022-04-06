@@ -1,6 +1,5 @@
 import 'dart:convert';
-
-import 'package:ecommerce/models/home_model.dart';
+import 'package:ecommerce/screens/home_store/models/home_model.dart';
 import 'package:http/http.dart' as http;
 
 class HomeProvider{

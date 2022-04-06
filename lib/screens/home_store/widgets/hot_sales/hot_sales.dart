@@ -29,6 +29,7 @@ class HotSales extends StatelessWidget {
           options: CarouselOptions(
             height: 182,
             viewportFraction: 1,
+            autoPlay: true,
           ),
           itemCount: state.homeInfo.homeStore.length,
         );

@@ -13,4 +13,8 @@ class MyAppIcons {
   static const String search = 'assets/icons/search.svg';
   static const String qrcode = 'assets/icons/qrcode.svg';
   static const String exit = 'assets/icons/exit.svg';
+  static const String sdCard = 'assets/icons/sd_card.svg';
+  static const String cpu = 'assets/icons/CPU.svg';
+  static const String camera = 'assets/icons/camera.svg';
+  static const String memory = 'assets/icons/memory.svg';
 }

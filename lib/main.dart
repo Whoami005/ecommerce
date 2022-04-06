@@ -1,7 +1,10 @@
 import 'package:ecommerce/bloc/bloc_observer.dart';
-import 'package:ecommerce/repositories/home_repository.dart';
 import 'package:ecommerce/screens/home_store/bloc/home_bloc.dart';
 import 'package:ecommerce/screens/home_store/home_store.dart';
+import 'package:ecommerce/screens/home_store/repositories/home_repository.dart';
+import 'package:ecommerce/screens/product_details/bloc/product_details_bloc.dart';
+import 'package:ecommerce/screens/product_details/product_details.dart';
+import 'package:ecommerce/screens/product_details/repositories/product_details_repository.dart';
 import 'package:ecommerce/screens/widgets/bottom_navigation_bar/bottom_navigation_bar.dart';
 import 'package:ecommerce/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -16,20 +19,31 @@ void main() {
 
 class MyApp extends StatelessWidget {
   final homeRepository = HomeRepository();
+  final productRepository = ProductDetailsRepository();
 
   MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<HomeBloc>(
-      create: (BuildContext context) =>
-          HomeBloc(homeRepository: homeRepository)..add(const HomeLoadEvent()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<HomeBloc>(
+          create: (BuildContext context) =>
+              HomeBloc(homeRepository: homeRepository)
+                ..add(const HomeLoadEvent()),
+        ),
+        BlocProvider<ProductDetailsBloc>(
+            create: (BuildContext context) =>
+                ProductDetailsBloc(productDetailsRepository: productRepository)
+                  ..add(const ProductLoadEvent()))
+      ],
       child: MaterialApp(
         theme: myLightTheme,
-        initialRoute: '/menu',
+        initialRoute: '/',
         routes: {
-          '/': (context) => const HomeStore(),
-          '/menu': (context) => const BottomNavigationMenu(),
+          '/': (context) => const BottomNavigationMenu(),
+          '/home': (context) => const HomeStore(),
+          '/productDetails': (context) => const ProductDetails(),
         },
       ),
     );

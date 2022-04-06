@@ -13,9 +13,7 @@ class MyGeolocation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      // mainAxisSize: MainAxisSize.min,
       children: [
-        // Expanded(child: SizedBox(width: 1,)),
         IconButton(
             onPressed: () {}, icon: SvgPicture.asset(MyAppIcons.geolocation)),
         const SizedBox(

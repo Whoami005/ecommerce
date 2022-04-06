@@ -10,7 +10,7 @@ class MyAppTextStyle {
   }
   static TextStyle title2(Color color) {
     return TextStyle(
-        fontSize: 15,
+        fontSize: 16,
         fontWeight: FontWeight.w500,
         color: color
     );
@@ -32,6 +32,13 @@ class MyAppTextStyle {
   static TextStyle title21(Color color) {
     return TextStyle(
         fontSize: 12,
+        fontWeight: FontWeight.w500,
+        color: color
+    );
+  }
+  static TextStyle title25(Color color) {
+    return TextStyle(
+        fontSize: 24,
         fontWeight: FontWeight.w500,
         color: color
     );
@@ -80,9 +87,30 @@ class MyAppTextStyle {
       color: color,
     );
   }
+  static TextStyle title13(Color color) {
+    return TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 20,
+      color: color,
+    );
+  }
   static TextStyle title32 (Color color) {
     return TextStyle(
         fontSize: 10,
+        fontWeight: FontWeight.w700,
+        color: color
+    );
+  }
+  static TextStyle title33 (Color color) {
+    return TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w700,
+        color: color
+    );
+  }
+  static TextStyle title34 (Color color) {
+    return TextStyle(
+        fontSize: 13,
         fontWeight: FontWeight.w700,
         color: color
     );
