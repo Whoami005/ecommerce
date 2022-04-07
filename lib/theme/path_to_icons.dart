@@ -17,4 +17,7 @@ class MyAppIcons {
   static const String cpu = 'assets/icons/CPU.svg';
   static const String camera = 'assets/icons/camera.svg';
   static const String memory = 'assets/icons/memory.svg';
+  static const String basket1 = 'assets/icons/basket1.svg';
+  static const String plus = 'assets/icons/plus.svg';
+  static const String minus = 'assets/icons/minus.svg';
 }

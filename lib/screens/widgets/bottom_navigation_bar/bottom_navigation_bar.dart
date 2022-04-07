@@ -17,16 +17,20 @@ class _BottomNavigationMenuState extends State<BottomNavigationMenu> {
 
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeStore(),
-    Center(child: Text(S().Basket)),
+    // const MyCart(),
+    Center(child: Text(S().Favorite)),
     Center(child: Text(S().Favorite)),
     Center(child: Text(S().Settings)),
   ];
 
   void onSelectedTab(int index) {
-    if (_selectedTab == index) return;
-    setState(() {
-      _selectedTab = index;
-    });
+    if (index != 1){
+      setState(() {
+        _selectedTab = index;
+      });
+    }else{
+      Navigator.pushNamed(context, '/basket');
+    }
   }
 
   @override

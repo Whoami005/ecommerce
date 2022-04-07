@@ -11,5 +11,5 @@ class ProductLoadEvent extends ProductDetailsEvent {
   const ProductLoadEvent();
 
   @override
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [];
 }

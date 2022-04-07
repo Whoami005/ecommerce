@@ -3,6 +3,9 @@ import 'package:ecommerce/generated/l10n.dart';
 import 'package:ecommerce/screens/home_store/bloc/home_bloc.dart';
 import 'package:ecommerce/screens/home_store/home_store.dart';
 import 'package:ecommerce/screens/home_store/repositories/home_repository.dart';
+import 'package:ecommerce/screens/my_cart/bloc/my_cart_bloc.dart';
+import 'package:ecommerce/screens/my_cart/my_cart.dart';
+import 'package:ecommerce/screens/my_cart/repository/my_cart_repository.dart';
 import 'package:ecommerce/screens/product_details/bloc/product_details_bloc.dart';
 import 'package:ecommerce/screens/product_details/product_details.dart';
 import 'package:ecommerce/screens/product_details/repositories/product_details_repository.dart';
@@ -22,6 +25,7 @@ void main() {
 class MyApp extends StatelessWidget {
   final homeRepository = HomeRepository();
   final productRepository = ProductDetailsRepository();
+  final cartRepository = CartRepository();
 
   MyApp({Key? key}) : super(key: key);
 
@@ -37,7 +41,12 @@ class MyApp extends StatelessWidget {
         BlocProvider<ProductDetailsBloc>(
             create: (BuildContext context) =>
                 ProductDetailsBloc(productDetailsRepository: productRepository)
-                  ..add(const ProductLoadEvent()))
+                  ..add(const ProductLoadEvent())),
+        BlocProvider<MyCartBloc>(
+          create: (BuildContext context) =>
+          MyCartBloc(cartRepository: cartRepository)
+            ..add(const MyCartLoadEvent()),
+        ),
       ],
       child: MaterialApp(
         theme: myLightTheme,
@@ -53,6 +62,7 @@ class MyApp extends StatelessWidget {
           '/': (context) => const BottomNavigationMenu(),
           '/home': (context) => const HomeStore(),
           '/home/productDetails': (context) => const ProductDetails(),
+          '/basket': (context) => const MyCart(),
         },
       ),
     );
