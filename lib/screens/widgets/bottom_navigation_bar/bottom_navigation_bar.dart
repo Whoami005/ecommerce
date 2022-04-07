@@ -1,8 +1,11 @@
+import 'package:badges/badges.dart';
 import 'package:ecommerce/generated/l10n.dart';
 import 'package:ecommerce/screens/home_store/home_store.dart';
+import 'package:ecommerce/screens/my_cart/bloc/my_cart_bloc.dart';
 import 'package:ecommerce/theme/path_to_icons.dart';
 import 'package:ecommerce/theme/text_style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class BottomNavigationMenu extends StatefulWidget {
@@ -62,7 +65,10 @@ class _BottomNavigationMenuState extends State<BottomNavigationMenu> {
                   ),
                   label: ''),
               BottomNavigationBarItem(
-                  icon: SvgPicture.asset(MyAppIcons.basket), label: ''),
+                  icon: Badge(
+                    badgeContent: const BadgeContentWidget(),
+                      child: SvgPicture.asset(MyAppIcons.basket)),
+                  label: ''),
               BottomNavigationBarItem(
                   icon: SvgPicture.asset(MyAppIcons.favorites), label: ''),
               BottomNavigationBarItem(
@@ -74,5 +80,19 @@ class _BottomNavigationMenuState extends State<BottomNavigationMenu> {
         ),
       ),
     );
+  }
+}
+
+class BadgeContentWidget extends StatelessWidget {
+  const BadgeContentWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<MyCartBloc, MyCartState>(builder: (context, state) {
+      if (state is MyCartLoadState){
+        return Text('${state.cartInfo.basket.length}',);
+      }
+      return const Center(child: CircularProgressIndicator());
+    });
   }
 }
