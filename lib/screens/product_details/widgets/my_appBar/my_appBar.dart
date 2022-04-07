@@ -12,7 +12,9 @@ class MyAppBar extends StatelessWidget {
     return SafeArea(
       child: Row(
         children: [
-          const SizedBox(width: 42,),
+          const SizedBox(
+            width: 42,
+          ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
@@ -22,27 +24,32 @@ class MyAppBar extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10)),
                 primary: MyAppColors.ellipse3,
                 padding: const EdgeInsets.all(10),
-                minimumSize: const Size(15, 15)
+                minimumSize: const Size(15, 15)),
+            child: const Icon(
+              Icons.arrow_back_ios_new_outlined,
             ),
-            child: const Icon(Icons.arrow_back_ios_new_outlined,),
           ),
           const Spacer(),
-          Text('Product Details', style: MyAppTextStyle.title24(Colors.black),),
+          Text(
+            'Product Details',
+            style: MyAppTextStyle.title24(Colors.black),
+          ),
           const Spacer(),
           ElevatedButton(
             onPressed: () {
-              // Navigator.pop(context);
+              Navigator.pushNamed(context, '/basket');
             },
             style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 primary: MyAppColors.ellipse2,
                 padding: const EdgeInsets.all(10),
-                minimumSize: const Size(15, 15)
-            ),
+                minimumSize: const Size(15, 15)),
             child: SvgPicture.asset(MyAppIcons.basket),
           ),
-          const SizedBox(width: 35,),
+          const SizedBox(
+            width: 35,
+          ),
         ],
       ),
     );

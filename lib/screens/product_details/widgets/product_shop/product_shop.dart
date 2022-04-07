@@ -7,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-
 class ProductShopBarInfo extends StatelessWidget {
   final String title;
   final bool isFavorites;
@@ -203,7 +202,7 @@ class _SelectColorCapacityState extends State<SelectColorCapacity> {
                 SizedBox(
                   width: 40,
                   child: FloatingActionButton(
-                    heroTag: 'one',
+                      heroTag: 'one',
                       backgroundColor: colorFromApi(state.productInfo.color[0]),
                       onPressed: () {
                         setState(() {
@@ -276,7 +275,9 @@ class _SelectColorCapacityState extends State<SelectColorCapacity> {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/basket');
+              },
               child: Row(
                 children: [
                   // const SizedBox(width: 40,),
@@ -289,7 +290,8 @@ class _SelectColorCapacityState extends State<SelectColorCapacity> {
                 ],
               ),
               style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
                   primary: MyAppColors.ellipse2,
                   minimumSize: const Size(double.infinity, 54)),
             )

@@ -22,7 +22,9 @@ class PhoneBasket extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 23, right: 20),
       child: Row(
+        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // const Spacer(),
           Container(
             height: 100,
             width: 100,
@@ -56,8 +58,7 @@ class PhoneBasket extends StatelessWidget {
               ),
             ],
           ),
-          const Spacer(),
-          const Counter(),
+          const Expanded(child: Counter()),
         ],
       ),
     );
@@ -205,16 +206,18 @@ class BasketBottom extends StatelessWidget {
           thickness: 1,
           color: Colors.white24,
         ),
-        const Spacer(),
-        Padding(
-          padding: const EdgeInsets.only(left: 23, right: 20),
-          child: ElevatedButton(
-              onPressed: (){},
-              child: Text('Checkout' , style: MyAppTextStyle.title33(Colors.white),),
-            style: ElevatedButton.styleFrom(
-              primary: MyAppColors.ellipse2,
-              minimumSize: const Size(double.infinity, 54),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10),),
+        const SizedBox(height: 27,),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 44, right: 44),
+            child: ElevatedButton(
+                onPressed: (){},
+                child: Text('Checkout' , style: MyAppTextStyle.title33(Colors.white),),
+              style: ElevatedButton.styleFrom(
+                primary: MyAppColors.ellipse2,
+                minimumSize: const Size(double.infinity, 54),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10),),
+              ),
             ),
           ),
         ),

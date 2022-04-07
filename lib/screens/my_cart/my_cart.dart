@@ -19,15 +19,16 @@ class MyCart extends StatelessWidget {
       if (state is MyCartLoadState) {
         return Scaffold(
           body: SafeArea(
-            child: Column(
-              children: [
-                const SizedBox(height: 15),
-                const MyCartAppBar(),
-                const SizedBox(
-                  height: 49,
-                ),
-                Expanded(
-                  child: Container(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const SizedBox(height: 15),
+                  const MyCartAppBar(),
+                  const SizedBox(
+                    height: 49,
+                  ),
+                  Container(
+                    height: 690,
                     width: double.infinity,
                     decoration: const BoxDecoration(
                       color: MyAppColors.ellipse3,
@@ -51,17 +52,19 @@ class MyCart extends StatelessWidget {
                             image: state.cartInfo.basket[1].images,
                             title: state.cartInfo.basket[1].title,
                             price: '\$${state.cartInfo.basket[1].price}'),
-                        const SizedBox(height: 40,),
+                        // const SizedBox(height: 40,),
+                        const Spacer(),
                         Expanded(
-                            child: BasketBottom(
-                          total: state.cartInfo.total,
-                          delivery: state.cartInfo.delivery,
-                        )),
+                          child: BasketBottom(
+                            total: state.cartInfo.total,
+                            delivery: state.cartInfo.delivery,
+                          ),
+                        ),
                       ],
                     ),
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             ),
           ),
         );

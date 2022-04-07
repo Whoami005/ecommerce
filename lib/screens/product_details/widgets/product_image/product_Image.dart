@@ -9,9 +9,12 @@ class ProductImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ProductDetailsBloc, ProductDetailsState> (builder: (context, state){
+    return BlocBuilder<ProductDetailsBloc, ProductDetailsState>(
+        builder: (context, state) {
       if (state is ProductInitialState) {
-        return const Center(child: CircularProgressIndicator(),);
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
       }
       if (state is ProductLoadedState) {
         return CarouselSlider.builder(
@@ -20,20 +23,18 @@ class ProductImage extends StatelessWidget {
               return ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: CachedNetworkImage(
-                    imageUrl: state.productInfo.images[index],
+                  imageUrl: state.productInfo.images[index],
                 ),
               );
             },
             options: CarouselOptions(
               viewportFraction: 0.7,
               height: 250,
-            )
-        );
+            ));
       }
-      return const Center(child: CircularProgressIndicator(),);
-    }
-    );
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    });
   }
 }
-
-
