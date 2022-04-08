@@ -1,15 +1,15 @@
 import 'package:ecommerce/bloc/bloc_observer.dart';
+import 'package:ecommerce/feature/home_store/presentation/bloc/home_bloc.dart';
+import 'package:ecommerce/feature/home_store/presentation/screens/home_store.dart';
+import 'package:ecommerce/feature/home_store/repositories/home_repository.dart';
+import 'package:ecommerce/feature/my_cart/presentation/bloc/my_cart_bloc.dart';
+import 'package:ecommerce/feature/my_cart/presentation/screens/my_cart.dart';
+import 'package:ecommerce/feature/my_cart/repository/my_cart_repository.dart';
+import 'package:ecommerce/feature/product_details/presentation/bloc/product_details_bloc.dart';
+import 'package:ecommerce/feature/product_details/presentation/screens/product_details.dart';
+import 'package:ecommerce/feature/product_details/repositories/product_details_repository.dart';
+import 'package:ecommerce/feature/widgets/bottom_navigation_bar/bottom_navigation_bar.dart';
 import 'package:ecommerce/generated/l10n.dart';
-import 'package:ecommerce/screens/home_store/bloc/home_bloc.dart';
-import 'package:ecommerce/screens/home_store/home_store.dart';
-import 'package:ecommerce/screens/home_store/repositories/home_repository.dart';
-import 'package:ecommerce/screens/my_cart/bloc/my_cart_bloc.dart';
-import 'package:ecommerce/screens/my_cart/my_cart.dart';
-import 'package:ecommerce/screens/my_cart/repository/my_cart_repository.dart';
-import 'package:ecommerce/screens/product_details/bloc/product_details_bloc.dart';
-import 'package:ecommerce/screens/product_details/product_details.dart';
-import 'package:ecommerce/screens/product_details/repositories/product_details_repository.dart';
-import 'package:ecommerce/screens/widgets/bottom_navigation_bar/bottom_navigation_bar.dart';
 import 'package:ecommerce/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,8 +44,8 @@ class MyApp extends StatelessWidget {
                   ..add(const ProductLoadEvent())),
         BlocProvider<MyCartBloc>(
           create: (BuildContext context) =>
-          MyCartBloc(cartRepository: cartRepository)
-            ..add(const MyCartLoadEvent()),
+              MyCartBloc(cartRepository: cartRepository)
+                ..add(const MyCartLoadEvent()),
         ),
       ],
       child: MaterialApp(
