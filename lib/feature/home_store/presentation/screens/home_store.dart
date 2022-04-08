@@ -1,14 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecommerce/feature/home_store/presentation/bloc/home_bloc.dart';
+import 'package:ecommerce/feature/home_store/presentation/widgets/best_seller/best_seller.dart';
+import 'package:ecommerce/feature/home_store/presentation/widgets/geolocation/geolocation.dart';
+import 'package:ecommerce/feature/home_store/presentation/widgets/hot_sales/hot_sales.dart';
+import 'package:ecommerce/feature/home_store/presentation/widgets/search/search.dart';
+import 'package:ecommerce/feature/home_store/presentation/widgets/select_category/select_category.dart';
 import 'package:ecommerce/generated/l10n.dart';
-import 'package:ecommerce/screens/home_store/bloc/home_bloc.dart';
-import 'package:ecommerce/screens/home_store/widgets/best_seller/best_seller.dart';
-import 'package:ecommerce/screens/home_store/widgets/geolocation/geolocation.dart';
-import 'package:ecommerce/screens/home_store/widgets/hot_sales/hot_sales.dart';
-import 'package:ecommerce/screens/home_store/widgets/search/search.dart';
-import 'package:ecommerce/screens/home_store/widgets/select_category/select_category.dart';
 import 'package:ecommerce/theme/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shimmer/shimmer.dart';
 
 class HomeStore extends StatelessWidget {
   const HomeStore({Key? key}) : super(key: key);
@@ -17,7 +18,21 @@ class HomeStore extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(builder: (context, state) {
       if (state is HomeInitialState) {
-        return const Center(child: CircularProgressIndicator());
+        return const Center(child: CircularProgressIndicator(),);
+
+        //   Center(
+        //   child: Shimmer.fromColors(
+        //       baseColor: Colors.red,
+        //       highlightColor: Colors.yellow,
+        //       child: const Text(
+        //         'Shimmer',
+        //         textAlign: TextAlign.center,
+        //         style: TextStyle(
+        //           fontSize: 40.0,
+        //           fontWeight: FontWeight.bold,
+        //         ),
+        //       )),
+        // );
       }
       if (state is HomeLoadedState) {
         return Scaffold(
@@ -81,8 +96,7 @@ class HomeStore extends StatelessWidget {
                               state.homeInfo.bestSeller[index].isFavorites,
                         );
                       },
-                    )
-                    // const BestSeller(),
+                    ),
                   ],
                 ),
               ),
