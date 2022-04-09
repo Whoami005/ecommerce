@@ -8,7 +8,7 @@ import 'package:ecommerce/feature/home_store/domain/repositories/home_store_repo
 class HomeStoreRepositoryImpl extends HomeStoreRepository {
   final HomeStoreRemoteDataSource homeStoreRemoteDataSource;
 
-  HomeStoreRepositoryImpl(this.homeStoreRemoteDataSource);
+  const HomeStoreRepositoryImpl({required this.homeStoreRemoteDataSource});
 
   @override
   Future<Either<Failure, HomeEntity>> getAllPhones() async {

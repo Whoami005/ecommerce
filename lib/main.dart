@@ -32,13 +32,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<HomeBloc>(
+        BlocProvider<HomeStoreBloc>(
           create: (BuildContext context) =>
-              injection<HomeBloc>()..add(const HomeLoadEvent()),
+              injection<HomeStoreBloc>()..add(const HomeStoreLoadEvent()),
         ),
         BlocProvider<ProductDetailsBloc>(
-            create: (BuildContext context) =>
-                injection<ProductDetailsBloc>()..add(const ProductLoadEvent())),
+            create: (BuildContext context) => injection<ProductDetailsBloc>()
+              ..add(const ProductDetailsLoadEvent())),
         BlocProvider<MyCartBloc>(
           create: (BuildContext context) =>
               injection<MyCartBloc>()..add(const MyCartLoadEvent()),

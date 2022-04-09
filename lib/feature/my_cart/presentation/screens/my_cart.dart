@@ -11,12 +11,12 @@ class MyCart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MyCartBloc, MyCartState>(builder: (context, state) {
-      if (state is MyCartInitialState) {
+      if (state is MyCartLoadingState) {
         return const Center(
           child: CircularProgressIndicator(),
         );
       }
-      if (state is MyCartLoadState) {
+      if (state is MyCartLoadedState) {
         return Scaffold(
           body: SafeArea(
             child: SingleChildScrollView(

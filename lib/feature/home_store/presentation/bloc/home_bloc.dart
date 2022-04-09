@@ -8,17 +8,17 @@ part 'home_event.dart';
 
 part 'home_state.dart';
 
-class HomeBloc extends Bloc<HomeEvent, HomeState> {
+class HomeStoreBloc extends Bloc<HomeStoreEvent, HomeStoreState> {
   final GetAllPhonesUseCase getAllPhones;
 
-  HomeBloc({required this.getAllPhones}) : super(HomeInitialState()) {
-    on<HomeLoadEvent>((event, emit) async {
-      emit(HomeInitialState());
+  HomeStoreBloc({required this.getAllPhones}) : super(HomeStoreLoadingState()) {
+    on<HomeStoreLoadEvent>((event, emit) async {
+      emit(HomeStoreLoadingState());
 
       final _homeInfo = await getAllPhones();
       _homeInfo.fold(
-          (l) => emit(const HomeErrorState(errorMessage: 'Ошибка Bloc Api')),
-          (r) => emit(HomeLoadedState(homeInfo: r)));
+          (l) => emit(const HomeStoreErrorState(errorMessage: 'Ошибка Bloc Api')),
+          (r) => emit(HomeStoreLoadedState(homeInfo: r)));
     });
   }
 }

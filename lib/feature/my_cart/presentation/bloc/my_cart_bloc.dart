@@ -11,13 +11,13 @@ part 'my_cart_state.dart';
 class MyCartBloc extends Bloc<MyCartEvent, MyCartState> {
   final GetAllCartUseCase getAllCartUseCase;
 
-  MyCartBloc({required this.getAllCartUseCase}) : super(MyCartInitialState()) {
+  MyCartBloc({required this.getAllCartUseCase}) : super(MyCartLoadingState()) {
     on<MyCartLoadEvent>((event, emit) async {
-      emit(MyCartInitialState());
+      emit(MyCartLoadingState());
       final _myCartInfo = await getAllCartUseCase();
       _myCartInfo.fold(
           (l) => emit(MyCartErrorState(errorMessage: 'Ошибка Bloc Api')),
-          (r) => emit(MyCartLoadState(cartInfo: r)));
+          (r) => emit(MyCartLoadedState(cartInfo: r)));
     });
   }
 }

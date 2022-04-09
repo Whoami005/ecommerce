@@ -8,7 +8,7 @@ import 'package:ecommerce/feature/home_store/domain/repositories/home_store_repo
 class GetAllPhonesUseCase extends UseCase<HomeEntity, void>{
   final HomeStoreRepository homeStoreRepository;
 
-  GetAllPhonesUseCase(this.homeStoreRepository);
+  const GetAllPhonesUseCase({required this.homeStoreRepository});
 
   @override
   Future<Either<Failure, HomeEntity>> call() async {

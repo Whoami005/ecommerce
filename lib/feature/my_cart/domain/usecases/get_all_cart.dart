@@ -7,7 +7,7 @@ import 'package:ecommerce/feature/my_cart/domain/repositories/my_cart_repository
 class GetAllCartUseCase extends UseCase<CartEntity, void> {
   final MyCartRepository myCartRepository;
 
-  GetAllCartUseCase(this.myCartRepository);
+  const GetAllCartUseCase({required this.myCartRepository});
 
   @override
   Future<Either<Failure, CartEntity>> call() async {

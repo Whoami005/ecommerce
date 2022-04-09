@@ -12,9 +12,9 @@ class ProductDetailsBloc
   final GetAllProductDetailsUseCase getAllProductDetailsUseCase;
 
   ProductDetailsBloc({required this.getAllProductDetailsUseCase})
-      : super(ProductDetailsInitialState()) {
-    on<ProductLoadEvent>((event, emit) async {
-      emit(ProductDetailsInitialState());
+      : super(ProductDetailsLoadingState()) {
+    on<ProductDetailsLoadEvent>((event, emit) async {
+      emit(ProductDetailsLoadingState());
       final _productInfo = await getAllProductDetailsUseCase();
       _productInfo.fold(
           (l) => emit(const ProductDetailsErrorState(errorMessage: 'Ошибка Bloc Api')),

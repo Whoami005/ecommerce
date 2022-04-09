@@ -89,7 +89,7 @@ class BadgeContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MyCartBloc, MyCartState>(builder: (context, state) {
-      if (state is MyCartLoadState) {
+      if (state is MyCartLoadedState) {
         return Text(
           '${state.cartInfo.basket.length}',
         );

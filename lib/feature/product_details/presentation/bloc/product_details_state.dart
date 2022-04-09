@@ -7,7 +7,7 @@ abstract class ProductDetailsState extends Equatable {
   List<Object?> get props => [];
 }
 
-class ProductDetailsInitialState extends ProductDetailsState {
+class ProductDetailsLoadingState extends ProductDetailsState {
   @override
   List<Object> get props => [];
 }

@@ -8,7 +8,7 @@ import 'package:ecommerce/feature/product_details/domain/repositories/product_de
 class ProductDetailsRepositoryImpl extends ProductDetailsRepository {
   final ProductDetailsRemoteDataSource productDetailsRemoteDataSource;
 
-  ProductDetailsRepositoryImpl(this.productDetailsRemoteDataSource);
+  const ProductDetailsRepositoryImpl({required this.productDetailsRemoteDataSource});
 
   @override
   Future<Either<Failure, ProductDetailsEntity>> getAllProductDetails() async {

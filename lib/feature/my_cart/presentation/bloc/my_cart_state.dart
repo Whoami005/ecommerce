@@ -3,15 +3,15 @@ part of 'my_cart_bloc.dart';
 @immutable
 abstract class MyCartState extends Equatable {}
 
-class MyCartInitialState extends MyCartState {
+class MyCartLoadingState extends MyCartState {
   @override
   List<Object?> get props => [];
 }
 
-class MyCartLoadState extends MyCartState {
+class MyCartLoadedState extends MyCartState {
   final CartEntity cartInfo;
 
-  MyCartLoadState({required this.cartInfo});
+  MyCartLoadedState({required this.cartInfo});
 
   @override
   List<Object?> get props => [cartInfo];

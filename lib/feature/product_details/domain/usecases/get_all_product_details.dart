@@ -7,7 +7,7 @@ import 'package:ecommerce/feature/product_details/domain/repositories/product_de
 class GetAllProductDetailsUseCase extends UseCase<ProductDetailsEntity, void>{
   final ProductDetailsRepository productDetailsDomainRepository;
 
-  GetAllProductDetailsUseCase(this.productDetailsDomainRepository);
+  const GetAllProductDetailsUseCase({required this.productDetailsDomainRepository});
 
   @override
   Future<Either<Failure, ProductDetailsEntity>> call() async{

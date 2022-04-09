@@ -18,19 +18,30 @@ import 'package:get_it/get_it.dart';
 GetIt injection = GetIt.instance;
 
 Future<void> initializeDependencies() async {
-  injection.registerFactory(() => HomeBloc(getAllPhones: injection()));
-  injection.registerFactory(() => ProductDetailsBloc(getAllProductDetailsUseCase: injection()));
+  injection.registerFactory(() => HomeStoreBloc(getAllPhones: injection()));
+  injection.registerFactory(
+      () => ProductDetailsBloc(getAllProductDetailsUseCase: injection()));
   injection.registerFactory(() => MyCartBloc(getAllCartUseCase: injection()));
-  
-  injection.registerLazySingleton(() => GetAllPhonesUseCase(injection()));
-  injection.registerLazySingleton(() => GetAllProductDetailsUseCase(injection()));
-  injection.registerLazySingleton(() => GetAllCartUseCase(injection()));
 
-  injection.registerLazySingleton<HomeStoreRepository>(() => HomeStoreRepositoryImpl(injection()));
-  injection.registerLazySingleton<ProductDetailsRepository>(() => ProductDetailsRepositoryImpl(injection()));
-  injection.registerLazySingleton<MyCartRepository>(() => MyCartRepositoryImpl(injection()));
-  
-  injection.registerLazySingleton<HomeStoreRemoteDataSource>(() => HomeStoreRemoteDataSourceImpl());
-  injection.registerLazySingleton<ProductDetailsRemoteDataSource>(() => ProductDetailsRemoteDataSourceImpl());
-  injection.registerLazySingleton<MyCartRemoteDataSources>(() => MyCartRemoteDataSourcesImpl());
+  injection.registerLazySingleton(
+      () => GetAllPhonesUseCase(homeStoreRepository: injection()));
+  injection.registerLazySingleton(() =>
+      GetAllProductDetailsUseCase(productDetailsDomainRepository: injection()));
+  injection.registerLazySingleton(
+      () => GetAllCartUseCase(myCartRepository: injection()));
+
+  injection.registerLazySingleton<HomeStoreRepository>(
+      () => HomeStoreRepositoryImpl(homeStoreRemoteDataSource: injection()));
+  injection.registerLazySingleton<ProductDetailsRepository>(() =>
+      ProductDetailsRepositoryImpl(
+          productDetailsRemoteDataSource: injection()));
+  injection.registerLazySingleton<MyCartRepository>(
+      () => MyCartRepositoryImpl(myCartRemoteDataSources: injection()));
+
+  injection.registerLazySingleton<HomeStoreRemoteDataSource>(
+      () => HomeStoreRemoteDataSourceImpl());
+  injection.registerLazySingleton<ProductDetailsRemoteDataSource>(
+      () => ProductDetailsRemoteDataSourceImpl());
+  injection.registerLazySingleton<MyCartRemoteDataSources>(
+      () => MyCartRemoteDataSourcesImpl());
 }

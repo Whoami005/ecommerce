@@ -16,8 +16,8 @@ class HomeStore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeBloc, HomeState>(builder: (context, state) {
-      if (state is HomeInitialState) {
+    return BlocBuilder<HomeStoreBloc, HomeStoreState>(builder: (context, state) {
+      if (state is HomeStoreLoadingState) {
         return const Center(child: CircularProgressIndicator(),);
 
         //   Center(
@@ -34,7 +34,7 @@ class HomeStore extends StatelessWidget {
         //       )),
         // );
       }
-      if (state is HomeLoadedState) {
+      if (state is HomeStoreLoadedState) {
         return Scaffold(
           body: SafeArea(
             child: SingleChildScrollView(

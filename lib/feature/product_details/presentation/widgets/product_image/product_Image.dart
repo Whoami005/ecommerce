@@ -12,7 +12,7 @@ class ProductImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ProductDetailsBloc, ProductDetailsState>(
         builder: (context, state) {
-      if (state is ProductDetailsInitialState) {
+      if (state is ProductDetailsLoadingState) {
         return const Center(
           child: CircularProgressIndicator(),
         );

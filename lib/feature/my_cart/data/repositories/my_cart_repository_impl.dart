@@ -8,7 +8,7 @@ import 'package:ecommerce/feature/my_cart/domain/repositories/my_cart_repository
 class MyCartRepositoryImpl extends MyCartRepository {
   final MyCartRemoteDataSources myCartRemoteDataSources;
 
-  MyCartRepositoryImpl(this.myCartRemoteDataSources);
+  const MyCartRepositoryImpl({required this.myCartRemoteDataSources});
 
   @override
   Future<Either<Failure, CartEntity>> getAllCart() async{
