@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:ecommerce/feature/home_store/data/models/home_model.dart';
-import 'package:ecommerce/feature/home_store/repositories/home_repository.dart';
+import 'package:ecommerce/feature/home_store/domain/entities/home_entity.dart';
+import 'package:ecommerce/feature/home_store/domain/usecases/get_all_phones.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
@@ -9,17 +9,16 @@ part 'home_event.dart';
 part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  final HomeRepository homeRepository;
+  final GetAllPhonesUseCase getAllPhones;
 
-  HomeBloc({required this.homeRepository}) : super(HomeInitialState()) {
+  HomeBloc({required this.getAllPhones}) : super(HomeInitialState()) {
     on<HomeLoadEvent>((event, emit) async {
       emit(HomeInitialState());
-      try {
-        final _homeInfo = await homeRepository.getAllPhones();
-        emit(HomeLoadedState(homeInfo: _homeInfo));
-      } catch (error) {
-        emit(const HomeErrorState(errorMessage: 'Ошибка'));
-      }
+
+      final _homeInfo = await getAllPhones();
+      _homeInfo.fold(
+          (l) => emit(const HomeErrorState(errorMessage: 'Ошибка Bloc Api')),
+          (r) => emit(HomeLoadedState(homeInfo: r)));
     });
   }
 }

@@ -12,12 +12,12 @@ class ProductImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ProductDetailsBloc, ProductDetailsState>(
         builder: (context, state) {
-      if (state is ProductInitialState) {
+      if (state is ProductDetailsInitialState) {
         return const Center(
           child: CircularProgressIndicator(),
         );
       }
-      if (state is ProductLoadedState) {
+      if (state is ProductDetailsLoadedState) {
         return CarouselSlider.builder(
             itemCount: state.productInfo.images.length,
             itemBuilder: (BuildContext context, int index, int realIndex) {

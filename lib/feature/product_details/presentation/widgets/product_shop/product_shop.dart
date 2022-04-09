@@ -194,7 +194,7 @@ class _SelectColorCapacityState extends State<SelectColorCapacity> {
   Widget build(BuildContext context) {
     return BlocBuilder<ProductDetailsBloc, ProductDetailsState>(
         builder: (context, state) {
-      if (state is ProductLoadedState) {
+      if (state is ProductDetailsLoadedState) {
         return Column(
           children: [
             Row(

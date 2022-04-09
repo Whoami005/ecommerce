@@ -9,10 +9,19 @@ class MyCartInitialState extends MyCartState {
 }
 
 class MyCartLoadState extends MyCartState {
-  final CartModel cartInfo;
+  final CartEntity cartInfo;
 
   MyCartLoadState({required this.cartInfo});
 
   @override
   List<Object?> get props => [cartInfo];
+}
+
+class MyCartErrorState extends MyCartState {
+  final String errorMessage;
+
+  MyCartErrorState({required this.errorMessage});
+
+  @override
+  List<Object?> get props => [errorMessage];
 }

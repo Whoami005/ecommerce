@@ -12,12 +12,12 @@ class ProductDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ProductDetailsBloc, ProductDetailsState>(
         builder: (context, state) {
-      if (state is ProductInitialState) {
+      if (state is ProductDetailsInitialState) {
         return const Center(
           child: CircularProgressIndicator(),
         );
       }
-      if (state is ProductLoadedState) {
+      if (state is ProductDetailsLoadedState) {
         return Scaffold(
           body: SingleChildScrollView(
             child: Column(

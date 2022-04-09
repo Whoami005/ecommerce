@@ -14,7 +14,7 @@ class HomeInitialState extends HomeState {
 }
 
 class HomeLoadedState extends HomeState {
-  final HomeModel homeInfo;
+  final HomeEntity homeInfo;
 
   const HomeLoadedState({
     required this.homeInfo,

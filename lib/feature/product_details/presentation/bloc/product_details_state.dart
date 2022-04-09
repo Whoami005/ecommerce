@@ -7,24 +7,24 @@ abstract class ProductDetailsState extends Equatable {
   List<Object?> get props => [];
 }
 
-class ProductInitialState extends ProductDetailsState {
+class ProductDetailsInitialState extends ProductDetailsState {
   @override
   List<Object> get props => [];
 }
 
-class ProductLoadedState extends ProductDetailsState {
-  final ProductDetailsModel productInfo;
+class ProductDetailsLoadedState extends ProductDetailsState {
+  final ProductDetailsEntity productInfo;
 
-  const ProductLoadedState({required this.productInfo});
+  const ProductDetailsLoadedState({required this.productInfo});
 
   @override
   List<Object?> get props => [productInfo];
 }
 
-class ProductErrorState extends ProductDetailsState {
+class ProductDetailsErrorState extends ProductDetailsState {
   final String errorMessage;
 
-  const ProductErrorState({required this.errorMessage});
+  const ProductDetailsErrorState({required this.errorMessage});
 
   @override
   List<Object?> get props => [errorMessage];

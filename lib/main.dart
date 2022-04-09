@@ -1,33 +1,32 @@
 import 'package:ecommerce/bloc/bloc_observer.dart';
 import 'package:ecommerce/feature/home_store/presentation/bloc/home_bloc.dart';
 import 'package:ecommerce/feature/home_store/presentation/screens/home_store.dart';
-import 'package:ecommerce/feature/home_store/repositories/home_repository.dart';
 import 'package:ecommerce/feature/my_cart/presentation/bloc/my_cart_bloc.dart';
 import 'package:ecommerce/feature/my_cart/presentation/screens/my_cart.dart';
-import 'package:ecommerce/feature/my_cart/repository/my_cart_repository.dart';
 import 'package:ecommerce/feature/product_details/presentation/bloc/product_details_bloc.dart';
 import 'package:ecommerce/feature/product_details/presentation/screens/product_details.dart';
-import 'package:ecommerce/feature/product_details/repositories/product_details_repository.dart';
 import 'package:ecommerce/feature/widgets/bottom_navigation_bar/bottom_navigation_bar.dart';
 import 'package:ecommerce/generated/l10n.dart';
+import 'package:ecommerce/locator_service.dart';
 import 'package:ecommerce/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'locator_service.dart' as dependencies_injections;
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dependencies_injections.initializeDependencies();
   BlocOverrides.runZoned(
-    () => runApp(MyApp()),
+    () => runApp(const MyApp()),
     blocObserver: BlocsObserver(),
   );
 }
 
 class MyApp extends StatelessWidget {
-  final homeRepository = HomeRepository();
-  final productRepository = ProductDetailsRepository();
-  final cartRepository = CartRepository();
-
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,17 +34,14 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<HomeBloc>(
           create: (BuildContext context) =>
-              HomeBloc(homeRepository: homeRepository)
-                ..add(const HomeLoadEvent()),
+              injection<HomeBloc>()..add(const HomeLoadEvent()),
         ),
         BlocProvider<ProductDetailsBloc>(
             create: (BuildContext context) =>
-                ProductDetailsBloc(productDetailsRepository: productRepository)
-                  ..add(const ProductLoadEvent())),
+                injection<ProductDetailsBloc>()..add(const ProductLoadEvent())),
         BlocProvider<MyCartBloc>(
           create: (BuildContext context) =>
-              MyCartBloc(cartRepository: cartRepository)
-                ..add(const MyCartLoadEvent()),
+              injection<MyCartBloc>()..add(const MyCartLoadEvent()),
         ),
       ],
       child: MaterialApp(
