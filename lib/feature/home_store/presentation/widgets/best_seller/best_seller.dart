@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:ecommerce/theme/colors.dart';
-import 'package:ecommerce/theme/text_style.dart';
+import 'package:ecommerce/common/colors.dart';
+import 'package:ecommerce/common/text_style.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerInfo extends StatelessWidget {

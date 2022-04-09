@@ -1,7 +1,7 @@
 import 'package:ecommerce/feature/my_cart/presentation/bloc/my_cart_bloc.dart';
 import 'package:ecommerce/feature/my_cart/presentation/widget/basket/basket.dart';
-import 'package:ecommerce/feature/my_cart/presentation/widget/my_appBar/My_appBar.dart';
-import 'package:ecommerce/theme/colors.dart';
+import 'package:ecommerce/common/colors.dart';
+import 'package:ecommerce/feature/my_cart/presentation/widget/my_app_bar/my_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
