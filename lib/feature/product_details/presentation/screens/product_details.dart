@@ -13,8 +13,10 @@ class ProductDetails extends StatelessWidget {
     return BlocBuilder<ProductDetailsBloc, ProductDetailsState>(
         builder: (context, state) {
       if (state is ProductDetailsLoadingState) {
-        return const Center(
-          child: CircularProgressIndicator(),
+        return const Scaffold(
+          body: Center(
+            child: CircularProgressIndicator(),
+          ),
         );
       }
       if (state is ProductDetailsLoadedState) {

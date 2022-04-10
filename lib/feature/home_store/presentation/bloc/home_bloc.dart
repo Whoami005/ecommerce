@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:ecommerce/feature/home_store/domain/entities/home_entity.dart';
-import 'package:ecommerce/feature/home_store/domain/usecases/get_all_phones.dart';
+import 'package:ecommerce/feature/home_store/domain/use_cases/get_all_phones.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 

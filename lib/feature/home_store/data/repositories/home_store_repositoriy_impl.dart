@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:ecommerce/core/error/exception.dart';
 import 'package:ecommerce/core/error/failure.dart';
-import 'package:ecommerce/feature/home_store/data/datasources/home_store_remote_data_source.dart';
+import 'package:ecommerce/feature/home_store/data/data_sources/home_store_remote_data_source.dart';
 import 'package:ecommerce/feature/home_store/domain/entities/home_entity.dart';
 import 'package:ecommerce/feature/home_store/domain/repositories/home_store_repository.dart';
 
