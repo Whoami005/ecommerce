@@ -206,17 +206,24 @@ class BasketBottom extends StatelessWidget {
           thickness: 1,
           color: Colors.white24,
         ),
-        const SizedBox(height: 27,),
+        const SizedBox(
+          height: 27,
+        ),
         Expanded(
           child: Padding(
             padding: const EdgeInsets.only(left: 44, right: 44),
             child: ElevatedButton(
-                onPressed: (){},
-                child: Text('Checkout' , style: MyAppTextStyle.title33(Colors.white),),
+              onPressed: () {},
+              child: Text(
+                'Checkout',
+                style: MyAppTextStyle.title33(Colors.white),
+              ),
               style: ElevatedButton.styleFrom(
                 primary: MyAppColors.ellipse2,
                 minimumSize: const Size(double.infinity, 54),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10),),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
               ),
             ),
           ),

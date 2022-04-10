@@ -55,8 +55,13 @@ class MyCartAppBar extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 50,),
-            Text('My Cart', style: MyAppTextStyle.title35(MyAppColors.ellipse3), )
+            const SizedBox(
+              height: 50,
+            ),
+            Text(
+              'My Cart',
+              style: MyAppTextStyle.title35(MyAppColors.ellipse3),
+            )
           ],
         ),
       ),

@@ -17,7 +17,8 @@ class ProductDetailsBloc
       emit(ProductDetailsLoadingState());
       final _productInfo = await getAllProductDetailsUseCase();
       _productInfo.fold(
-          (l) => emit(const ProductDetailsErrorState(errorMessage: 'Ошибка Bloc Api')),
+          (l) => emit(
+              const ProductDetailsErrorState(errorMessage: 'Ошибка Bloc Api')),
           (r) => emit(ProductDetailsLoadedState(productInfo: r)));
     });
   }

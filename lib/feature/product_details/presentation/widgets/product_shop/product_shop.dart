@@ -1,7 +1,7 @@
-import 'package:ecommerce/feature/product_details/presentation/bloc/product_details_bloc.dart';
 import 'package:ecommerce/common/colors.dart';
 import 'package:ecommerce/common/path_to_icons.dart';
 import 'package:ecommerce/common/text_style.dart';
+import 'package:ecommerce/feature/product_details/presentation/bloc/product_details_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';

@@ -50,28 +50,38 @@ class FilterOptions extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          Text('Brand', style: MyAppTextStyle.title24(MyAppColors.ellipse3),),
+          Text(
+            'Brand',
+            style: MyAppTextStyle.title24(MyAppColors.ellipse3),
+          ),
           const SizedBox(
             height: 5,
           ),
           Container(
               height: 37,
-              padding: const EdgeInsets.only(left: 14,),
+              padding: const EdgeInsets.only(
+                left: 14,
+              ),
               width: double.infinity,
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(5)),
+                  borderRadius: BorderRadius.circular(5)),
               child: const MyBrandDropdownButton()),
           const SizedBox(
             height: 10,
           ),
-          Text('Price', style: MyAppTextStyle.title24(MyAppColors.ellipse3),),
+          Text(
+            'Price',
+            style: MyAppTextStyle.title24(MyAppColors.ellipse3),
+          ),
           const SizedBox(
             height: 5,
           ),
           Container(
               height: 37,
-              padding: const EdgeInsets.only(left: 14,),
+              padding: const EdgeInsets.only(
+                left: 14,
+              ),
               width: double.infinity,
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey),
@@ -80,13 +90,18 @@ class FilterOptions extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Text('Size', style: MyAppTextStyle.title24(MyAppColors.ellipse3),),
+          Text(
+            'Size',
+            style: MyAppTextStyle.title24(MyAppColors.ellipse3),
+          ),
           const SizedBox(
             height: 5,
           ),
           Container(
               height: 37,
-              padding: const EdgeInsets.only(left: 14,),
+              padding: const EdgeInsets.only(
+                left: 14,
+              ),
               width: double.infinity,
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey),
@@ -98,10 +113,12 @@ class FilterOptions extends StatelessWidget {
   }
 }
 
-
 class MyBrandDropdownButton extends StatefulWidget {
-
-  const MyBrandDropdownButton({Key? key, }) : super(key: key,);
+  const MyBrandDropdownButton({
+    Key? key,
+  }) : super(
+          key: key,
+        );
 
   @override
   State<MyBrandDropdownButton> createState() => _MyBrandDropdownButtonState();
@@ -111,29 +128,30 @@ class _MyBrandDropdownButtonState extends State<MyBrandDropdownButton> {
   String firstValue = 'Samsung';
   List<String> items = ['Samsung', 'Apple', 'Huawei', 'Motorolla'];
 
-
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(
       value: firstValue,
-      icon: const Icon(Icons.keyboard_arrow_down, color: Colors.grey,),
+      icon: const Icon(
+        Icons.keyboard_arrow_down,
+        color: Colors.grey,
+      ),
       isExpanded: true,
       onChanged: (String? newValue) {
-        if(firstValue == newValue)return;
+        if (firstValue == newValue) return;
         setState(() {
           firstValue = newValue!;
         });
       },
-      items: items
-          .map<DropdownMenuItem<String>>((String value) {
+      items: items.map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
             value: value,
-            child: Text(value, style: MyAppTextStyle.title24(MyAppColors.ellipse3)));
+            child: Text(value,
+                style: MyAppTextStyle.title24(MyAppColors.ellipse3)));
       }).toList(),
     );
   }
 }
-
 
 class MyPriceDropdownButton extends StatefulWidget {
   const MyPriceDropdownButton({Key? key}) : super(key: key);
@@ -144,30 +162,37 @@ class MyPriceDropdownButton extends StatefulWidget {
 
 class _MyPriceDropdownButtonState extends State<MyPriceDropdownButton> {
   String firstValue = '\$300 - \$500';
-  List<String> items = ['\$300 - \$500', '\$500 - \$800', '\$800 - \$1100', '\$1100 - \$1400'];
+  List<String> items = [
+    '\$300 - \$500',
+    '\$500 - \$800',
+    '\$800 - \$1100',
+    '\$1100 - \$1400'
+  ];
 
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(
       value: firstValue,
-      icon: const Icon(Icons.keyboard_arrow_down, color: Colors.grey,),
+      icon: const Icon(
+        Icons.keyboard_arrow_down,
+        color: Colors.grey,
+      ),
       isExpanded: true,
       onChanged: (String? newValue) {
-        if(firstValue == newValue)return;
+        if (firstValue == newValue) return;
         setState(() {
           firstValue = newValue!;
         });
       },
-      items: items
-          .map<DropdownMenuItem<String>>((String value) {
+      items: items.map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
             value: value,
-            child: Text(value, style: MyAppTextStyle.title24(MyAppColors.ellipse3)));
+            child: Text(value,
+                style: MyAppTextStyle.title24(MyAppColors.ellipse3)));
       }).toList(),
     );
   }
 }
-
 
 class MySizeDropdownButton extends StatefulWidget {
   const MySizeDropdownButton({Key? key}) : super(key: key);
@@ -178,26 +203,33 @@ class MySizeDropdownButton extends StatefulWidget {
 
 class _MySizeDropdownButtonState extends State<MySizeDropdownButton> {
   String firstValue = '4.5 to 5.5 inches';
-  List<String> items = ['4.5 to 5.5 inches', '5.5 to 6.5 inches', '6.5 to 7.5 inches', '7.5 to 8.5 inches'];
-
+  List<String> items = [
+    '4.5 to 5.5 inches',
+    '5.5 to 6.5 inches',
+    '6.5 to 7.5 inches',
+    '7.5 to 8.5 inches'
+  ];
 
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(
       value: firstValue,
-      icon: const Icon(Icons.keyboard_arrow_down, color: Colors.grey,),
+      icon: const Icon(
+        Icons.keyboard_arrow_down,
+        color: Colors.grey,
+      ),
       isExpanded: true,
       onChanged: (String? newValue) {
-        if(firstValue == newValue)return;
+        if (firstValue == newValue) return;
         setState(() {
           firstValue = newValue!;
         });
       },
-      items: items
-          .map<DropdownMenuItem<String>>((String value) {
+      items: items.map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
             value: value,
-            child: Text(value, style: MyAppTextStyle.title24(MyAppColors.ellipse3)));
+            child: Text(value,
+                style: MyAppTextStyle.title24(MyAppColors.ellipse3)));
       }).toList(),
     );
   }

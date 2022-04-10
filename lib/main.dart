@@ -1,4 +1,5 @@
-import 'package:ecommerce/bloc/bloc_observer.dart';
+import 'package:ecommerce/common/theme.dart';
+import 'package:ecommerce/core/bloc/bloc_observer.dart';
 import 'package:ecommerce/feature/home_store/presentation/bloc/home_bloc.dart';
 import 'package:ecommerce/feature/home_store/presentation/screens/home_store.dart';
 import 'package:ecommerce/feature/my_cart/presentation/bloc/my_cart_bloc.dart';
@@ -8,10 +9,10 @@ import 'package:ecommerce/feature/product_details/presentation/screens/product_d
 import 'package:ecommerce/feature/widgets/bottom_navigation_bar/bottom_navigation_bar.dart';
 import 'package:ecommerce/generated/l10n.dart';
 import 'package:ecommerce/locator_service.dart';
-import 'package:ecommerce/common/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
 import 'locator_service.dart' as dependencies_injections;
 
 void main() async {

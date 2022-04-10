@@ -11,7 +11,7 @@ class MyCartRepositoryImpl extends MyCartRepository {
   const MyCartRepositoryImpl({required this.myCartRemoteDataSources});
 
   @override
-  Future<Either<Failure, CartEntity>> getAllCart() async{
+  Future<Either<Failure, CartEntity>> getAllCart() async {
     try {
       final remoteMyCart = await myCartRemoteDataSources.getCart();
       return Right(remoteMyCart);
@@ -19,5 +19,4 @@ class MyCartRepositoryImpl extends MyCartRepository {
       return Left(ServerFailure());
     }
   }
-
 }

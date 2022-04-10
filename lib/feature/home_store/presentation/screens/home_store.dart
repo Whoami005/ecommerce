@@ -9,16 +9,19 @@ import 'package:ecommerce/feature/home_store/presentation/widgets/select_categor
 import 'package:ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shimmer/shimmer.dart';
+// import 'package:shimmer/shimmer.dart';
 
 class HomeStore extends StatelessWidget {
   const HomeStore({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeStoreBloc, HomeStoreState>(builder: (context, state) {
+    return BlocBuilder<HomeStoreBloc, HomeStoreState>(
+        builder: (context, state) {
       if (state is HomeStoreLoadingState) {
-        return const Center(child: CircularProgressIndicator(),);
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
 
         //   Center(
         //   child: Shimmer.fromColors(

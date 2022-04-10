@@ -1,7 +1,7 @@
-import 'package:ecommerce/generated/l10n.dart';
 import 'package:ecommerce/common/colors.dart';
 import 'package:ecommerce/common/path_to_icons.dart';
 import 'package:ecommerce/common/text_style.dart';
+import 'package:ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

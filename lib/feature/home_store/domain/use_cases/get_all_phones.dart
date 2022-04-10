@@ -4,8 +4,7 @@ import 'package:ecommerce/core/usecases/core_usecases.dart';
 import 'package:ecommerce/feature/home_store/domain/entities/home_entity.dart';
 import 'package:ecommerce/feature/home_store/domain/repositories/home_store_repository.dart';
 
-
-class GetAllPhonesUseCase extends UseCase<HomeEntity, void>{
+class GetAllPhonesUseCase extends UseCase<HomeEntity, void> {
   final HomeStoreRepository homeStoreRepository;
 
   const GetAllPhonesUseCase({required this.homeStoreRepository});

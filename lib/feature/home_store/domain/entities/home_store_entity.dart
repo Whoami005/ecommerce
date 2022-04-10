@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class HomeStoreEntity extends Equatable{
+class HomeStoreEntity extends Equatable {
   final int id;
   final bool? isNew;
   final String title;

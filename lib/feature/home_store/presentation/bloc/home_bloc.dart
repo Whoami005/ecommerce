@@ -17,7 +17,8 @@ class HomeStoreBloc extends Bloc<HomeStoreEvent, HomeStoreState> {
 
       final _homeInfo = await getAllPhones();
       _homeInfo.fold(
-          (l) => emit(const HomeStoreErrorState(errorMessage: 'Ошибка Bloc Api')),
+          (l) =>
+              emit(const HomeStoreErrorState(errorMessage: 'Ошибка Bloc Api')),
           (r) => emit(HomeStoreLoadedState(homeInfo: r)));
     });
   }

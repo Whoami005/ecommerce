@@ -1,9 +1,9 @@
 import 'package:badges/badges.dart';
+import 'package:ecommerce/common/path_to_icons.dart';
+import 'package:ecommerce/common/text_style.dart';
 import 'package:ecommerce/feature/home_store/presentation/screens/home_store.dart';
 import 'package:ecommerce/feature/my_cart/presentation/bloc/my_cart_bloc.dart';
 import 'package:ecommerce/generated/l10n.dart';
-import 'package:ecommerce/common/path_to_icons.dart';
-import 'package:ecommerce/common/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
