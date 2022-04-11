@@ -16,5 +16,4 @@ The project is an online store.
 - Splash screen
 
 ## Application video:
-https://user-images.githubusercontent.com/46159852/162733101-baaafd49-0e4b-496a-9f56-43bf664823fa.mov
-
+https://user-images.githubusercontent.com/46159852/162737064-46243148-d422-4955-abab-536e0c0f402a.mp4
