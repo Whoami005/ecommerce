@@ -1,16 +1,20 @@
-# ecommerce
+# Ecommerce Shop
 
-A new Flutter project.
+The project is an online store.
 
-## Getting Started
+## This project used:
 
-This project is a starting point for a Flutter application.
+- Dart
+- Flutter
+- Clean Architecture
+- Dependency Injection with GetIt
+- localization
+- http
+- dartz
+- Equatable
+- Flutter Bloc
+- Splash screen
 
-A few resources to get you started if this is your first Flutter project:
+## Application video:
+https://user-images.githubusercontent.com/46159852/162733101-baaafd49-0e4b-496a-9f56-43bf664823fa.mov
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
