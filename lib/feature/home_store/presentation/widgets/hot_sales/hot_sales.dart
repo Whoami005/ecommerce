@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce/common/colors.dart';
+import 'package:ecommerce/common/generated/l10n.dart';
 import 'package:ecommerce/common/text_style.dart';
-import 'package:ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class HomeSales extends StatelessWidget {

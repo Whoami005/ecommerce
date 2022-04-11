@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecommerce/common/generated/l10n.dart';
 import 'package:ecommerce/common/text_style.dart';
 import 'package:ecommerce/feature/home_store/presentation/bloc/home_bloc.dart';
 import 'package:ecommerce/feature/home_store/presentation/widgets/best_seller/best_seller.dart';
@@ -6,7 +7,6 @@ import 'package:ecommerce/feature/home_store/presentation/widgets/geolocation/ge
 import 'package:ecommerce/feature/home_store/presentation/widgets/hot_sales/hot_sales.dart';
 import 'package:ecommerce/feature/home_store/presentation/widgets/search/search.dart';
 import 'package:ecommerce/feature/home_store/presentation/widgets/select_category/select_category.dart';
-import 'package:ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:shimmer/shimmer.dart';

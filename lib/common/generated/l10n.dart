@@ -219,6 +219,206 @@ class S {
       args: [],
     );
   }
+
+  /// `Filter options`
+  String get FilterOptions {
+    return Intl.message(
+      'Filter options',
+      name: 'FilterOptions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done`
+  String get Done {
+    return Intl.message(
+      'Done',
+      name: 'Done',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Brand,`
+  String get Brand {
+    return Intl.message(
+      'Brand,',
+      name: 'Brand',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price`
+  String get Price {
+    return Intl.message(
+      'Price',
+      name: 'Price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Size`
+  String get Size {
+    return Intl.message(
+      'Size',
+      name: 'Size',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Samsung`
+  String get Samsung {
+    return Intl.message(
+      'Samsung',
+      name: 'Samsung',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apple`
+  String get Apple {
+    return Intl.message(
+      'Apple',
+      name: 'Apple',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Huawei`
+  String get Huawei {
+    return Intl.message(
+      'Huawei',
+      name: 'Huawei',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Motorolla`
+  String get Motorolla {
+    return Intl.message(
+      'Motorolla',
+      name: 'Motorolla',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get Total {
+    return Intl.message(
+      'Total',
+      name: 'Total',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery`
+  String get Delivery {
+    return Intl.message(
+      'Delivery',
+      name: 'Delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Checkout`
+  String get Checkout {
+    return Intl.message(
+      'Checkout',
+      name: 'Checkout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add address`
+  String get AddAddress {
+    return Intl.message(
+      'Add address',
+      name: 'AddAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Cart`
+  String get MyCart {
+    return Intl.message(
+      'My Cart',
+      name: 'MyCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Product Details`
+  String get ProductDetails {
+    return Intl.message(
+      'Product Details',
+      name: 'ProductDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shop`
+  String get Shop {
+    return Intl.message(
+      'Shop',
+      name: 'Shop',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Details`
+  String get Details {
+    return Intl.message(
+      'Details',
+      name: 'Details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Features`
+  String get Features {
+    return Intl.message(
+      'Features',
+      name: 'Features',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select color and capacity`
+  String get SelectColorAndCapacity {
+    return Intl.message(
+      'Select color and capacity',
+      name: 'SelectColorAndCapacity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to Cart`
+  String get AddtoCart {
+    return Intl.message(
+      'Add to Cart',
+      name: 'AddtoCart',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

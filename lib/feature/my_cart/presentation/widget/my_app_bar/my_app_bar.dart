@@ -1,4 +1,5 @@
 import 'package:ecommerce/common/colors.dart';
+import 'package:ecommerce/common/generated/l10n.dart';
 import 'package:ecommerce/common/path_to_icons.dart';
 import 'package:ecommerce/common/text_style.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +34,7 @@ class MyCartAppBar extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  'Add address',
+                  S.of(context).AddAddress,
                   style: MyAppTextStyle.title2(MyAppColors.ellipse3),
                 ),
                 ElevatedButton(
@@ -59,7 +60,7 @@ class MyCartAppBar extends StatelessWidget {
               height: 50,
             ),
             Text(
-              'My Cart',
+              S.of(context).MyCart,
               style: MyAppTextStyle.title35(MyAppColors.ellipse3),
             )
           ],

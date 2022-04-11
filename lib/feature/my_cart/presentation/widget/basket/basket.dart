@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce/common/colors.dart';
+import 'package:ecommerce/common/generated/l10n.dart';
 import 'package:ecommerce/common/path_to_icons.dart';
 import 'package:ecommerce/common/text_style.dart';
 import 'package:flutter/material.dart';
@@ -165,14 +166,14 @@ class BasketBottom extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Total',
+                    S.of(context).Total,
                     style: MyAppTextStyle.title1(Colors.white),
                   ),
                   const SizedBox(
                     height: 12,
                   ),
                   Text(
-                    'Delivery',
+                    S.of(context).Delivery,
                     style: MyAppTextStyle.title1(Colors.white),
                   ),
                 ],
@@ -215,7 +216,7 @@ class BasketBottom extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {},
               child: Text(
-                'Checkout',
+                S.of(context).Checkout,
                 style: MyAppTextStyle.title33(Colors.white),
               ),
               style: ElevatedButton.styleFrom(

@@ -1,4 +1,5 @@
 import 'package:ecommerce/common/colors.dart';
+import 'package:ecommerce/common/generated/l10n.dart';
 import 'package:ecommerce/common/path_to_icons.dart';
 import 'package:ecommerce/common/text_style.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,7 @@ class MyAppBar extends StatelessWidget {
           ),
           const Spacer(),
           Text(
-            'Product Details',
+            S.of(context).ProductDetails,
             style: MyAppTextStyle.title24(Colors.black),
           ),
           const Spacer(),

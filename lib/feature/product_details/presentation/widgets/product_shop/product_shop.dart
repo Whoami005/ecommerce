@@ -1,4 +1,5 @@
 import 'package:ecommerce/common/colors.dart';
+import 'package:ecommerce/common/generated/l10n.dart';
 import 'package:ecommerce/common/path_to_icons.dart';
 import 'package:ecommerce/common/text_style.dart';
 import 'package:ecommerce/feature/product_details/presentation/bloc/product_details_bloc.dart';
@@ -16,13 +17,13 @@ class ProductShopBarInfo extends StatelessWidget {
   final String sd;
   final String ssd;
 
-  final List<Widget> tabs = const [
-    Tab(text: 'Shop'),
-    Tab(text: 'Details'),
-    Tab(text: 'Features'),
+  final List<Widget> tabs = [
+    Tab(text: S().Shop),
+    Tab(text: S().Details),
+    Tab(text: S().Features),
   ];
 
-  const ProductShopBarInfo(
+  ProductShopBarInfo(
       {Key? key,
       required this.title,
       required this.isFavorites,
@@ -166,7 +167,7 @@ class ProductShopBarInfo extends StatelessWidget {
             height: 15,
           ),
           Text(
-            'Select color and capacity',
+            S.of(context).SelectColorAndCapacity,
             style: MyAppTextStyle.title2(MyAppColors.ellipse3),
           ),
           const SizedBox(
@@ -283,7 +284,7 @@ class _SelectColorCapacityState extends State<SelectColorCapacity> {
                   // const SizedBox(width: 40,),
                   Expanded(
                       child: Text(
-                    'Add to Cart     \$${state.productInfo.price}',
+                    '${S.of(context).AddtoCart}     \$${state.productInfo.price}',
                     style: MyAppTextStyle.title33(Colors.white),
                     textAlign: TextAlign.center,
                   )),

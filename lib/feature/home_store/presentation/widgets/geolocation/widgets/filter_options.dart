@@ -1,4 +1,5 @@
 import 'package:ecommerce/common/colors.dart';
+import 'package:ecommerce/common/generated/l10n.dart';
 import 'package:ecommerce/common/path_to_icons.dart';
 import 'package:ecommerce/common/text_style.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ class FilterOptions extends StatelessWidget {
               ),
               const Spacer(),
               Text(
-                'Filter options',
+                S.of(context).FilterOptions,
                 style: MyAppTextStyle.title24(Colors.black),
               ),
               const Spacer(),
@@ -51,7 +52,7 @@ class FilterOptions extends StatelessWidget {
             height: 50,
           ),
           Text(
-            'Brand',
+            S.of(context).Brand,
             style: MyAppTextStyle.title24(MyAppColors.ellipse3),
           ),
           const SizedBox(
@@ -71,7 +72,7 @@ class FilterOptions extends StatelessWidget {
             height: 10,
           ),
           Text(
-            'Price',
+            S.of(context).Price,
             style: MyAppTextStyle.title24(MyAppColors.ellipse3),
           ),
           const SizedBox(
@@ -91,7 +92,7 @@ class FilterOptions extends StatelessWidget {
             height: 10,
           ),
           Text(
-            'Size',
+            S.of(context).Size,
             style: MyAppTextStyle.title24(MyAppColors.ellipse3),
           ),
           const SizedBox(
@@ -125,8 +126,8 @@ class MyBrandDropdownButton extends StatefulWidget {
 }
 
 class _MyBrandDropdownButtonState extends State<MyBrandDropdownButton> {
-  String firstValue = 'Samsung';
-  List<String> items = ['Samsung', 'Apple', 'Huawei', 'Motorolla'];
+  String firstValue = S().Samsung;
+  List<String> items = [S().Samsung, S().Apple, S().Huawei, S().Motorolla];
 
   @override
   Widget build(BuildContext context) {
